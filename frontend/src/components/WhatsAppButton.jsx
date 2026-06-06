@@ -27,7 +27,7 @@ export default function WhatsAppButton({ productTitle, productPrice }) {
     y.set(0);
   };
 
-  const PLACEHOLDER_NUMBER = "919876543210";
+  const PLACEHOLDER_NUMBER = "919290859945";
   const text = `Hi, I'm interested in: ${productTitle} (₹${productPrice}). Please share more details.`;
   const url = `https://wa.me/${PLACEHOLDER_NUMBER}?text=${encodeURIComponent(text)}`;
 

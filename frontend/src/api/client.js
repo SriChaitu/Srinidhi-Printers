@@ -73,7 +73,7 @@ export const getProduct = async (id) => {
  * @returns {Promise<Object>} Token response
  */
 export const login = async (username, password) => {
-  const response = await api.post('/auth/login/', { username, password });
+  const response = await api.post('/accounts/login/', { username, password });
   return response.data;
 };
 
@@ -82,7 +82,7 @@ export const login = async (username, password) => {
  * @returns {Promise<Object>} User profile
  */
 export const getMe = async () => {
-  const response = await api.get('/auth/me/');
+  const response = await api.get('/accounts/me/');
   return response.data;
 };
 
