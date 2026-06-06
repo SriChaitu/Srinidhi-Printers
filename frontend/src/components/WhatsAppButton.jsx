@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
-export default function WhatsAppButton({ productTitle, productPrice }) {
+export default function WhatsAppButton({ productTitle, productPrice, productImage }) {
   const ref = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -28,7 +28,10 @@ export default function WhatsAppButton({ productTitle, productPrice }) {
   };
 
   const PLACEHOLDER_NUMBER = "919290859945";
-  const text = `Hi, I'm interested in: ${productTitle} (₹${productPrice}). Please share more details.`;
+  let text = `Hi, I'm interested in: ${productTitle} (₹${productPrice}). Please share more details.`;
+  if (productImage) {
+    text += `\n\nImage: ${productImage}`;
+  }
   const url = `https://wa.me/${PLACEHOLDER_NUMBER}?text=${encodeURIComponent(text)}`;
 
   return (

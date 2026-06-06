@@ -175,7 +175,7 @@ export default function ProductModal({ product, isOpen, onClose }) {
 
             {/* Footer */}
             <div className="flex-shrink-0 p-6 sm:p-8 border-t border-white/10 bg-[#020617]/80 backdrop-blur-xl relative z-20">
-              <WhatsAppButton productTitle={product.title} productPrice={product.price} />
+              <WhatsAppButton productTitle={product.title} productPrice={product.price} productImage={product.image} />
             </div>
           </motion.div>
         </div>
