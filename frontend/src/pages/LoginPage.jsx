@@ -5,7 +5,7 @@ import { Printer, Eye, EyeOff, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -18,7 +18,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const data = await login(email, password);
+      const data = await login(username, password);
       // Redirect based on role
       if (data.user?.is_owner) {
         window.location.href = 'http://localhost:8000/admin/';
@@ -69,22 +69,22 @@ export default function LoginPage() {
 
             <div>
               <label 
-                htmlFor="email" 
+                htmlFor="username" 
                 className="block text-sm font-semibold text-slate-700 mb-1.5"
               >
-                Email address
+                Username
               </label>
               <div className="mt-1">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="text"
+                  autoComplete="username"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className="appearance-none block w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm placeholder-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 sm:text-sm transition-all"
-                  placeholder="user@example.com"
+                  placeholder="admin"
                 />
               </div>
             </div>
