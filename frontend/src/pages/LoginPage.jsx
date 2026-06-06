@@ -20,10 +20,11 @@ export default function LoginPage() {
     try {
       const data = await login(username, password);
       // Redirect based on role
-      if (data.user?.is_owner) {
-        window.location.href = 'http://localhost:8000/admin/';
+      if (data.user?.is_owner || data.user?.is_superuser) {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+        window.location.href = apiUrl.replace('/api', '/admin/');
       } else {
-        navigate('/');
+        window.location.href = '/';
       }
     } catch (err) {
       setError(
