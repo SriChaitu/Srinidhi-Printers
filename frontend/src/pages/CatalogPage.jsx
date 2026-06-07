@@ -145,8 +145,27 @@ export default function CatalogPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 py-12 mt-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm tracking-widest uppercase">
+        <footer className="border-t border-white/10 py-16 mt-12 bg-slate-900/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-start gap-12 text-slate-400">
+            <div className="text-center md:text-left">
+              <h3 className="text-white font-display text-2xl mb-4 font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">
+                Srinidhi Printers
+              </h3>
+              <p className="mb-2"><strong className="text-slate-300 font-medium">Owner:</strong> Kattamuri Sekhar</p>
+              <p className="mb-2"><strong className="text-slate-300 font-medium">Phone:</strong> <a href="tel:+919290859945" className="hover:text-amber-400 transition-colors">+91 9290859945</a></p>
+            </div>
+            
+            <div className="text-center md:text-right max-w-md">
+              <h3 className="text-white font-display text-xl mb-4 font-bold tracking-wide">Location</h3>
+              <p className="leading-relaxed text-sm">
+                Opposite Old Head Post Office, near Krishna Bazar,<br/>
+                Chintapalli Road, Narsipatnam - 531116,<br/>
+                Anakapalli District, Andhra Pradesh
+              </p>
+            </div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-white/5 text-center text-slate-600 text-xs tracking-widest uppercase font-bold">
             <p>&copy; {new Date().getFullYear()} Srinidhi Printers. All rights reserved.</p>
           </div>
         </footer>
